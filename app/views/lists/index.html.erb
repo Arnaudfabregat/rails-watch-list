@@ -1,11 +1,15 @@
 
 <%= render "asset/banner" %>
 
+<div class="container">
+<div class="row">
   <% @lists.each do |list| %>
+    <div class="col-sm">
     <p>
       <%= render "asset/list_card", list: list%>
-      <%= link_to list.name, list_path(list) %>
     </p>
+    </div>
   <% end %>
-
+</div>
+</div>
 <%= link_to "Add a new List", new_list_path %>
