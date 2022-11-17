@@ -1,13 +1,7 @@
-<li class="list-group-item">
-  <%= @list.name %>
-</li>
+<%= @list.name %>
 
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li><%= bookmark.movie.title %> | <%= bookmark.comment %> | <%= link_to "Delete", bookmark_path,
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-  <% end %>
-</ul>
+<% @list.bookmarks.each do |bookmark| %>
+  <%= render "asset/movie_card", movie: bookmark.movie, bookmark: bookmark%>
+<% end %>
 
-<%= link_to "Add a new bookmark", new_list_bookmark_path(@list) %>
-<%= link_to "Lists index", lists_path %>
+<%= link_to "Add a new Movie", new_list_bookmark_path(@list) %>

@@ -3,6 +3,7 @@
 
   <% @lists.each do |list| %>
     <p>
+      <%= render "asset/list_card", list: list%>
       <%= link_to list.name, list_path(list) %>
     </p>
   <% end %>

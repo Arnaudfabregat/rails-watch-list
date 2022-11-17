@@ -1,0 +1,12 @@
+
+<div class="card-product">
+  <img src=<%= movie.poster_url %> />
+  <div class="card-product-infos">
+    <h2><%= movie.title %></h2>
+    <p><%= movie.overview %></p>
+    <p><%= bookmark.comment %></p>
+
+    <p><%= link_to "Delete", bookmark_path(bookmark),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+  </div>
+</div>
