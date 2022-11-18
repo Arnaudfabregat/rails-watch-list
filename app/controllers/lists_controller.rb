@@ -22,6 +22,12 @@ def create
   end
 end
 
+def destroy
+  @list = List.find(params[:id])
+  @list.destroy
+  redirect_to lists_path, status: :see_other
+end
+
 private
 
 def list_params
