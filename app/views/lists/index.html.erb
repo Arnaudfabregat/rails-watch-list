@@ -1,2 +1,11 @@
 
 <%= render "asset/banner" %>
+<div class="cards">
+  <% @lists.each do |list| %>
+    <div class="col-sm">
+    <p>
+      <%= render "asset/list_card", list: list%>
+    </p>
+    </div>
+  <% end %>
+</div>
